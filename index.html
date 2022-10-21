@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Starlight Gardens</title>
+    <!-- <link rel="stylesheet" href="styles.css"> -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500&display=swap" rel="stylesheet">
+    <link href="https://drive.google.com/file/d/1hybbGN6qO1MifkqkOKfhjrR9oi0lQyAF/view?usp=sharing" rel="icon" type="image/x-icon" />
+
+    <style>@import url(https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500&display=swap);
+
+        body{
+            margin: 0;
+            font-family: "Montserrat", sans-serif;
+            margin: 0;
+            background-color: #4b371c;
+            border: none;
+        }
+        
+        
+        .header-image{
+            height: 375px;
+            width: 100%;
+        }
+        
+        .header-background{
+            position: relative;
+            height: 279px;
+        
+        }
+        
+        .header{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 500px;
+        
+            position: absolute;
+            top: 7%;
+            left: 32%;
+        }
+        
+        
+        a{
+            text-decoration: none;
+            color: inherit;
+        }
+        
+        .contact-dropdown{
+            margin: 1% 0 1% 1.25%;
+            position: relative;
+            display: inline-block;
+        }
+        
+        .contact-dropdown-content{
+            display: none;
+            position: absolute;
+            right: 0;
+            border-radius: .3rem;
+            background-color: white;
+            padding: 1rem;
+        }
+        
+        .contact-dropdown:hover .contact-dropdown-content{
+            display: block;
+        }
+        
+        .contactBtn{
+            color: #4b371c;
+            margin: 0;
+            font-weight: 500;
+        }
+        
+        .contactBtn:hover{
+            color: black;
+            text-decoration: overline;
+        }
+        
+        .contact-email{
+            color: #727072;
+            padding-bottom: .5rem;
+            font-weight: 300;
+        }
+        
+        .contact-email:hover{
+            color: black;
+            text-decoration: overline;
+        }
+        
+        .locations-dropdown{
+            margin: 1% 1.25% 1% 1.25%;
+            position: relative;
+            display: inline-block;
+        }
+        
+        .locations-dropdown-content{
+            display: none;
+            position: absolute;
+            padding: 1.25rem 1rem 1rem 1rem;
+            width: 14rem;
+            right: -46px;
+            border-radius: .5rem;
+            z-index: 1;
+            background-color: white;
+            cursor: default;
+        }
+        
+        .locations-dropdown:hover .locations-dropdown-content{
+            display: block;
+        }
+        
+        .locationsBtn{
+            color: #727072;
+            margin: 0;
+            color: #4b371c;
+        }
+        
+        .locationsBtn:hover{
+            color: black;
+            text-decoration: overline;
+        }
+        
+        .westgate{
+            color: #727072;
+            margin: 0;
+            font-size: 1rem;
+            font-weight: bolder;
+        }
+        
+        .westgate:hover{
+            color: black;
+            text-decoration: overline;
+        }
+        
+        .hours-head{
+            margin: 5% 0 0 0;
+            font-size: .9rem;
+            font-weight: lighter;
+            color: black;
+        }
+        
+        .hours-content{
+            font-size: .7rem;
+            margin: 3% 0 0 0;
+            color: #727072;
+            line-height: 1.25rem;
+            font-weight: 300;
+        }
+        
+        .missionBtn{
+            color: #727072;
+            margin: 1% 1.25% 1% 0;
+            cursor: pointer;
+            color: #4b371c;
+        }
+        
+        .missionBtn:hover{
+            color: black;
+            text-decoration: overline;
+        }
+        
+        .mission-btn-text{
+            margin: 0;
+        }
+        
+        .logo-div{
+            margin: 0 auto 0 auto;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .logo{
+            object-fit: fill;
+            height: 73px;
+            width: 1111px;
+        }
+        
+        .modal{
+            position: absolute;
+            top: 120%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 55%;
+        
+            background-color: white;
+            padding:  0 1rem 1rem 1rem;
+            z-index: 10;
+            border-radius: .5rem;
+        }
+        
+        .close-modal{
+            position: absolute;
+            top: -1rem;
+            right: .2rem;
+            font-size: 1rem;
+            color: #333;
+            cursor: pointer;
+            background: none;
+            border: none;
+            height: 50%;
+        }
+        
+        .modal-content-header{
+            margin-top: 1rem;
+            margin-bottom: 0;
+            font-weight: 500;
+        }
+        
+        .modal-content{
+            line-height: 1.5rem;
+            margin-top: .5rem;
+            margin-bottom: 0;
+            font-weight: 300;
+        }
+        
+        .overlay{
+            position: absolute;
+            height: 100%;
+            width: 100%;
+            background: rgba(0, 0, 0, .6);
+            backdrop-filter: blur(3px);
+            z-index: 5;
+            cursor: pointer;
+        }
+        
+        .hidden{
+            display: none;
+        }
+        
+        .slideshow-container{
+            max-width: 1440px;
+            position: relative;
+            margin: 0 auto auto auto;
+            z-index: 0;
+        }
+        
+        .mySlides{
+            display: none;
+        }
+        
+        .prev, .next{
+            cursor: pointer;
+            position: absolute;
+            top: 50%;
+            width: auto;
+            margin-top: -22px;
+            padding: 16px;
+            color: white;
+            font-weight: bold;
+            font-size: 18px;
+            transition: 0.6s ease;
+            border-radius: 0 3px 3px 0;
+            user-select: none;
+        }
+        
+        .next{
+            right: 0;
+            border-radius: 3px 0 0 3px;
+        }
+        
+        .prev:hover, .next:hover{
+            background-color: rgba(0, 0, 0, 0.8);
+        }
+        
+        .fade{
+            animation-name: fade;
+            animation-duration: 1.5s;
+        }
+        
+        @keyframes fade{
+            from{opacity: .4};
+            to{opacity: 1};
+        }
+        </style>
+
+</head>
+
+<body>
+    <div class="container">
+        <div class="overlay hidden"></div>
+        <div class="header-background">
+            <img class="header-image" src="images/Starlight-Gardens-logo.jpeg" alt="">
+            <div class="header">
+                <div class="missionBtn">
+                    <h3 class="mission-btn-text">Our Mission</h3>
+                </div>
+                <div class="locations-dropdown">
+                    <h3 class="locationsBtn">Market Locations</h3>
+                    <div class="locations-dropdown-content">
+                        <h2 class="westgate"><a href="">Westgate Farmers Market</a></h2>
+                        <p class="hours-head">Hours:</p>
+                        <p class="hours-content">November 19th 9am-12pm</p>
+                        </div>
+                    </div>
+                    <div class="contact-dropdown">
+                        <h3 class="contactBtn">Contact</h3>
+                        <div class="contact-dropdown-content">
+                            <a class="contact-email" href="mailto: starlightgardensllc@gmail.com">starlightgardensllc@gmail.com</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal hidden">
+                    <button class="close-modal">x</button>
+                    <h2 class="modal-content-header">Our Mission</h2>
+                    <p class="modal-content">The goal of Starlight is to provide affordable, quality, organic vegetables to our community. <br>
+                        Using compost, well water, sunlight, and most importantly no pesticides or harmful fertilizers.</p>
+                    </div>
+                    <div class="slideshow-container">
+                        <div class="mySlides fade">
+                            <img src="/5W35" style="width: 100%; height: 37rem; border-radius: .5rem; object-fit: cover;">
+                        </div>
+                        <div class="mySlides fade">
+                            <img src="images/rows.jpeg" style="width: 100%; height: 37rem; border-radius: .5rem; object-fit: cover;">
+                        </div>
+                        <div class="mySlides fade">
+                            <img src="images/toms.jpeg" style="width: 100%; height: 37rem; border-radius: .5rem; object-fit: cover;">
+                        </div>
+                        <div class="mySlides fade">
+                            <img src="images/squashRows.jpeg" style="width: 100%; height: 37rem; border-radius: .5rem; object-fit: cover;">
+                        </div>
+                        <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+                        <a class="next" onclick="plusSlides(1)">&#10095;</a>
+                    </div>
+    </div>
+    <!-- <script src="index.js"></script> -->
+    <script>"use strict";
+
+        //Mission Statment Modal:
+        const modal = document.querySelector(".modal");
+        const overlay = document.querySelector(".overlay");
+        const missionBtn = document.querySelector(".missionBtn");
+        const closeModalBtn = document.querySelector(".close-modal");
+        
+        const openModal = function(){
+            modal.classList.remove("hidden");
+            overlay.classList.remove("hidden");
+        }
+        
+        const closeModal = function(){
+            modal.classList.add("hidden");
+            overlay.classList.add("hidden");
+        }
+        
+        missionBtn.addEventListener("click", openModal);
+        
+        closeModalBtn.addEventListener("click", closeModal);
+        overlay.addEventListener("click", closeModal);
+        
+        document.addEventListener("keydown", function(e){
+            if(e.key === "Escape" && !modal.classList.contains("hidden")){
+                closeModal();
+            }
+        })
+        
+        
+        //Image Carousel:
+        let slideIndex = 1;
+        showSlides(slideIndex);
+        
+        function plusSlides(n){
+            showSlides(slideIndex += n);
+        }
+        
+        function showSlides (n){
+            let i;
+            let slides = document.getElementsByClassName("mySlides");
+            if(n > slides.length) {slideIndex = 1}
+            if (n < 1) {slideIndex = slides.length}
+            for(i = 0; i < slides.length; i++){
+                slides[i].style.display = "none";
+            }
+        
+            slides[slideIndex-1].style.display = "block";
+        }</script>
+</body>
+</html>
